@@ -1,0 +1,10 @@
+{
+  "name": "Hex Forge Kit",
+  "short_name": "Hex Forge",
+  "description": "Sienna’s forge napkin tools — stay after the credits",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0f0e0c",
+  "theme_color": "#4a2810",
+  "lang": "en"
+}

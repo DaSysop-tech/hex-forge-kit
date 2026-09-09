@@ -1,0 +1,21 @@
+{
+  "updated": "2026-09-09",
+  "tips": [
+    {
+      "id": 1,
+      "tip": "Heat = (Vin\u2212Vout)\u00d7I. If it\u2019s over a watt without a sink, stop romanticizing LDOs."
+    },
+    {
+      "id": 2,
+      "tip": "Precedence is real: * and / bind tighter than + and \u2212. Parentheses are honesty."
+    },
+    {
+      "id": 3,
+      "tip": "Anti-alias before you sample. The ADC cannot invent the truth you threw away."
+    },
+    {
+      "id": 4,
+      "tip": "After the credits: the kit still opens. Forge doesn\u2019t need a chat window to exist."
+    }
+  ]
+}

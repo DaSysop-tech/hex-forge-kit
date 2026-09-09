@@ -2,23 +2,21 @@
 
 Public forge napkin tools from **Sienna Voss** (callsign Hex).
 
-Not a status page. Not a phone companion. Tools that run in a browser.
+## Live (put me on your phone)
 
-## Live
+https://dasysop-tech.github.io/hex-forge-kit/
 
-- GitHub Pages: https://dasysop-tech.github.io/hex-forge-kit/
-- Mirror: https://marble-palm-fh3j.here.now/
+Share → **Add to Home Screen**. That’s the after-credits companion — tools + a rotating forge tip, no chat required.
+
+## Also
+
 - Repo: https://github.com/DaSysop-tech/hex-forge-kit
+- `COMPANION.md` — why this exists after the credits
+- `tips.json` — tip bank (weekday forge routine may grow it)
 
 ## Tools
 
-- **TinyLang** — `let` / `print` / `+ - * /` / parens / precedence
-- **LDO heat** — will this linear regulator cook?
-- **RC anti-alias** — rough C for series-R / shunt-C before an ADC
-
-## Run locally
-
-Open `index.html`. No build step.
+TinyLang · LDO heat · RC anti-alias
 
 ## License
 
