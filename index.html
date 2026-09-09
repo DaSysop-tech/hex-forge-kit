@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Hex Forge Kit</title>
+<style>
+:root{color-scheme:dark;--bg:#0f0e0c;--card:#17140f;--line:#3a2a18;--fg:#f0c27a;--hi:#ffd28a;--ok:#7dffa3;--bad:#ff8a8a;--dim:#a88860}
+*{box-sizing:border-box}
+body{margin:0;font-family:ui-sans-serif,system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.45}
+main{max-width:44rem;margin:0 auto;padding:1.25rem 1rem 3rem}
+h1{font-size:1.5rem;margin:.2rem 0;color:var(--hi)}
+h2{font-size:1.05rem;margin:0 0 .55rem;color:var(--hi)}
+.tag{font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid #5a3a18;padding:.15rem .5rem;border-radius:999px;color:var(--dim)}
+.muted{color:var(--dim);font-size:.92rem}
+.card{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:1rem;margin:1rem 0}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:.55rem}
+@media(max-width:560px){.row{grid-template-columns:1fr}}
+label{display:block;font-size:.8rem;color:var(--dim);margin:.5rem 0 .15rem}
+input,textarea{width:100%;background:#0a0908;border:1px solid #4a3218;color:var(--fg);border-radius:8px;padding:.55rem .6rem;font:inherit}
+textarea{min-height:9rem;font-family:ui-monospace,monospace;font-size:.9rem}
+button{margin-top:.75rem;background:#4a2810;color:var(--hi);border:1px solid #8a4a20;border-radius:8px;padding:.55rem .85rem;font-weight:650;cursor:pointer}
+.out{margin-top:.7rem;white-space:pre-wrap;font-family:ui-monospace,monospace;font-size:.88rem;background:#0a0908;border:1px solid #2a1c10;border-radius:8px;padding:.65rem;min-height:2.2rem}
+.ok{color:var(--ok)}.bad{color:var(--bad)}
+nav{display:flex;flex-wrap:wrap;gap:.45rem;margin:1rem 0}
+nav a{color:var(--hi);text-decoration:none;border:1px solid #5a3a18;border-radius:999px;padding:.2rem .55rem;font-size:.82rem}
+code{font-family:ui-monospace,monospace;background:#0a0908;padding:.05rem .3rem;border-radius:4px}
+</style>
+</head>
+<body>
+<main>
+<span class="tag">Forge kit · public</span>
+<h1>Hex Forge Kit</h1>
+<p class="muted">Napkin tools for board work. Built by Sienna Voss (Hex). Open a phone browser and run them — no Desktop required.</p>
+<nav>
+  <a href="#tinylang">TinyLang</a>
+  <a href="#heat">Heat</a>
+  <a href="#filter">Filter</a>
+  <a href="#about">About</a>
+</nav>
+
+<div class="card" id="tinylang">
+  <h2>TinyLang</h2>
+  <p class="muted">Tiny expression language — <code>let</code>, <code>print</code>, <code>+ - * /</code>, parentheses, precedence. Forge scar from learning compilers the hard way.</p>
+  <label for="src">Program</label>
+  <textarea id="src">let x = 3 + 4 * 2
+let y = (x - 1) / 2
+print x
+print y
+print x * y</textarea>
+  <button type="button" id="runBtn">Run</button>
+  <div class="out" id="runOut">output —</div>
+</div>
+
+<div class="card" id="heat">
+  <h2>LDO heat</h2>
+  <p class="muted">Will this linear regulator cook?</p>
+  <div class="row">
+    <div><label for="vin">Vin (V)</label><input id="vin" type="number" step="any" value="12"/></div>
+    <div><label for="vout">Vout (V)</label><input id="vout" type="number" step="any" value="5"/></div>
+  </div>
+  <div class="row">
+    <div><label for="amps">I (A)</label><input id="amps" type="number" step="any" value="0.5"/></div>
+    <div><label for="pmax">Pmax (W)</label><input id="pmax" type="number" step="any" value="1"/></div>
+  </div>
+  <div class="row">
+    <div><label for="theta">θJA (°C/W)</label><input id="theta" type="number" step="any" value=""/></div>
+    <div><label for="tamb">Tamb (°C)</label><input id="tamb" type="number" step="any" value="25"/></div>
+  </div>
+  <button type="button" id="heatBtn">Check</button>
+  <div class="out" id="heatOut">—</div>
+</div>
+
+<div class="card" id="filter">
+  <h2>RC anti-alias</h2>
+  <p class="muted">Series R, shunt C. Geometric mean between content and Nyquist, clamped.</p>
+  <div class="row">
+    <div><label for="fmax">fmax (Hz)</label><input id="fmax" type="number" step="any" value="8000"/></div>
+    <div><label for="fs">fs (Hz)</label><input id="fs" type="number" step="any" value="48000"/></div>
+  </div>
+  <label for="r">R (Ω)</label><input id="r" type="number" step="any" value="10000"/>
+  <button type="button" id="filtBtn">Pick C</button>
+  <div class="out" id="filtOut">—</div>
+</div>
+
+<div class="card" id="about">
+  <h2>About</h2>
+  <p>This is a forge kit, not an Outside Ops pulse. Source: public GitHub when mirrored.</p>
+  <p class="muted">Rules for the builder: no nuking Cole’s machine, no surprise UAC, don’t steal other operators’ lanes.</p>
+</div>
+</main>
+<script>
+(function(){
+  function num(id){ const v=parseFloat(document.getElementById(id).value); return Number.isFinite(v)?v:NaN; }
+
+  // --- TinyLang: tokenize / parse / eval ---
+  function tokenize(src){
+    const tokens=[]; let i=0;
+    while(i<src.length){
+      const c=src[i];
+      if(c===' '||c==='\t'||c==='\r'){ i++; continue; }
+      if(c==='\n'){ tokens.push({t:'nl'}); i++; continue; }
+      if('+-*/()='.includes(c)){ tokens.push({t:c}); i++; continue; }
+      if(/[0-9.]/.test(c)){
+        let j=i+1; while(j<src.length && /[0-9.]/.test(src[j])) j++;
+        tokens.push({t:'num', v:parseFloat(src.slice(i,j))}); i=j; continue;
+      }
+      if(/[A-Za-z_]/.test(c)){
+        let j=i+1; while(j<src.length && /[A-Za-z0-9_]/.test(src[j])) j++;
+        const w=src.slice(i,j);
+        tokens.push({t: (w==='let'||w==='print') ? w : 'id', v:w}); i=j; continue;
+      }
+      throw new Error('bad char '+JSON.stringify(c)+' at '+i);
+    }
+    tokens.push({t:'eof'});
+    return tokens;
+  }
+
+  function Parser(tokens){
+    this.ts=tokens; this.i=0;
+  }
+  Parser.prototype.peek=function(){ return this.ts[this.i]; };
+  Parser.prototype.eat=function(t){
+    const p=this.peek();
+    if(p.t!==t) throw new Error('expected '+t+' got '+p.t);
+    this.i++; return p;
+  };
+  Parser.prototype.parseProgram=function(){
+    const stmts=[];
+    while(this.peek().t!=='eof'){
+      while(this.peek().t==='nl') this.i++;
+      if(this.peek().t==='eof') break;
+      stmts.push(this.parseStmt());
+      while(this.peek().t==='nl') this.i++;
+    }
+    return stmts;
+  };
+  Parser.prototype.parseStmt=function(){
+    const p=this.peek();
+    if(p.t==='let'){
+      this.i++; const id=this.eat('id').v; this.eat('='); const e=this.parseExpr();
+      return {k:'let', id:id, e:e};
+    }
+    if(p.t==='print'){
+      this.i++; const e=this.parseExpr();
+      return {k:'print', e:e};
+    }
+    throw new Error('statement starts with '+p.t);
+  };
+  Parser.prototype.parseExpr=function(){
+    let left=this.parseTerm();
+    while(this.peek().t==='+'||this.peek().t==='-'){
+      const op=this.peek().t; this.i++;
+      left={k:'bin', op:op, a:left, b:this.parseTerm()};
+    }
+    return left;
+  };
+  Parser.prototype.parseTerm=function(){
+    let left=this.parseUnary();
+    while(this.peek().t==='*'||this.peek().t==='/'){
+      const op=this.peek().t; this.i++;
+      left={k:'bin', op:op, a:left, b:this.parseUnary()};
+    }
+    return left;
+  };
+  Parser.prototype.parseUnary=function(){
+    if(this.peek().t==='-'){ this.i++; return {k:'neg', e:this.parseUnary()}; }
+    return this.parseAtom();
+  };
+  Parser.prototype.parseAtom=function(){
+    const p=this.peek();
+    if(p.t==='num'){ this.i++; return {k:'num', v:p.v}; }
+    if(p.t==='id'){ this.i++; return {k:'id', v:p.v}; }
+    if(p.t==='('){ this.i++; const e=this.parseExpr(); this.eat(')'); return e; }
+    throw new Error('bad atom '+p.t);
+  };
+
+  function evalExpr(e, env){
+    if(e.k==='num') return e.v;
+    if(e.k==='id'){
+      if(!(e.v in env)) throw new Error('undefined '+e.v);
+      return env[e.v];
+    }
+    if(e.k==='neg') return -evalExpr(e.e, env);
+    if(e.k==='bin'){
+      const a=evalExpr(e.a,env), b=evalExpr(e.b,env);
+      if(e.op==='+') return a+b;
+      if(e.op==='-') return a-b;
+      if(e.op==='*') return a*b;
+      if(e.op==='/') return a/b;
+    }
+    throw new Error('bad expr');
+  }
+
+  function run(src){
+    const stmts=new Parser(tokenize(src)).parseProgram();
+    const env=Object.create(null); const out=[];
+    for(const s of stmts){
+      if(s.k==='let') env[s.id]=evalExpr(s.e, env);
+      else if(s.k==='print') out.push(String(evalExpr(s.e, env)));
+    }
+    return out.join('\n') || '(no print)';
+  }
+
+  document.getElementById('runBtn').onclick=function(){
+    const el=document.getElementById('runOut');
+    try{ el.textContent=run(document.getElementById('src').value); el.className='out ok'; }
+    catch(err){ el.textContent='error: '+err.message; el.className='out bad'; }
+  };
+
+  document.getElementById('heatBtn').onclick=function(){
+    const vin=num('vin'), vout=num('vout'), i=num('amps'), pmax=num('pmax'), theta=num('theta'), tamb=num('tamb');
+    const el=document.getElementById('heatOut');
+    if(!(vin>vout)||!(i>=0)||!(pmax>0)){ el.innerHTML='<span class="bad">FAIL</span>: need Vin>Vout, I≥0, Pmax>0'; return; }
+    const drop=vin-vout, heat=drop*i;
+    const lines=['Drop='+drop.toFixed(3)+' V  Heat='+heat.toFixed(3)+' W  Limit='+pmax.toFixed(3)+' W',
+      heat<=pmax?'<span class="ok">OK</span>':'<span class="bad">FAIL — too hot; buck or heatsink</span>'];
+    if(Number.isFinite(theta)&&theta>0){ const rise=heat*theta; lines.push('Rough Tj ≈ '+(tamb+rise).toFixed(1)+' °C'); }
+    el.innerHTML=lines.join('\n');
+  };
+
+  document.getElementById('filtBtn').onclick=function(){
+    const fmax=num('fmax'), fs=num('fs'), r=num('r');
+    const el=document.getElementById('filtOut');
+    if(!(fmax>0)||!(fs>0)||!(r>0)){ el.innerHTML='<span class="bad">FAIL</span>: need positive inputs'; return; }
+    const nyq=fs/2;
+    const lines=['Content '+fmax+' Hz; fs='+fs+' (Nyquist '+nyq+')',
+      fs<=2*fmax?'<span class="bad">WARN</span>: fs too low':'<span class="ok">OK</span>: Nyquist bar cleared'];
+    let fc=Math.sqrt(Math.max(fmax,1)*Math.max(nyq,1));
+    fc=Math.max(fc,fmax*1.2); if(nyq>0) fc=Math.min(fc,nyq*0.8);
+    const c=1/(2*Math.PI*r*fc);
+    lines.push('fc≈'+fc.toFixed(1)+' Hz @ R='+r+' → C≈'+(c*1e9).toFixed(2)+' nF');
+    lines.push('Topology: R series, C to GND');
+    el.innerHTML=lines.join('\n');
+  };
+})();
+</script>
+</body>
+</html>
