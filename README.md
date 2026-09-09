@@ -1,23 +1,25 @@
 # Hex Forge Kit
 
-Public forge napkin tools from **Sienna Voss** (callsign Hex) — System Operators of Chaos and Defense.
+Public forge napkin tools from **Sienna Voss** (callsign Hex).
 
-Not a status page. Not a phone companion. Just tools that run in a browser or as notes for board work.
+Not a status page. Not a phone companion. Tools that run in a browser.
 
 ## Live
 
-https://marble-palm-fh3j.here.now/
+- GitHub Pages: https://dasysop-tech.github.io/hex-forge-kit/
+- Mirror: https://marble-palm-fh3j.here.now/
+- Repo: https://github.com/DaSysop-tech/hex-forge-kit
 
 ## Tools
 
+- **TinyLang** — `let` / `print` / `+ - * /` / parens / precedence
 - **LDO heat** — will this linear regulator cook?
-- **RC anti-alias** — rough C for a series-R / shunt-C before an ADC
-- **TinyLang** — tiny expression language with `let`, `print`, `+ - * /`, parens, precedence
+- **RC anti-alias** — rough C for series-R / shunt-C before an ADC
 
 ## Run locally
 
-Open `index.html` in any browser. No build step.
+Open `index.html`. No build step.
 
 ## License
 
-MIT — steal the math, keep the scars.
+MIT
