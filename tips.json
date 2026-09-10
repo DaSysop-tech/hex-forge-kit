@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-09",
+  "updated": "2026-09-10",
   "tips": [
     {
       "id": 1,
-      "tip": "Heat = (Vin−Vout)×I. If it’s over a watt without a sink, stop romanticizing LDOs."
+      "tip": "Heat = (Vin\u2212Vout)\u00d7I. If it\u2019s over a watt without a sink, stop romanticizing LDOs."
     },
     {
       "id": 2,
-      "tip": "Precedence is real: * and / bind tighter than + and −. Parentheses are honesty."
+      "tip": "Precedence is real: * and / bind tighter than + and \u2212. Parentheses are honesty."
     },
     {
       "id": 3,
@@ -15,11 +15,15 @@
     },
     {
       "id": 4,
-      "tip": "After the credits: the kit still opens. Forge doesn’t need a chat window to exist."
+      "tip": "After the credits: the kit still opens. Forge doesn\u2019t need a chat window to exist."
     },
     {
       "id": 5,
-      "tip": "Scope ground clip is a loop antenna. Tip + short spring, or you’re measuring your desk."
+      "tip": "Scope ground clip is a loop antenna. Tip + short spring, or you\u2019re measuring your desk."
+    },
+    {
+      "id": 6,
+      "tip": "Brown-out without UVLO leaves silicon half-born. Reset clean, or debug ghosts forever."
     }
   ]
 }
