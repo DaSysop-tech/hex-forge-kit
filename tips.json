@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-10",
+  "updated": "2026-09-11",
   "tips": [
     {
       "id": 1,
@@ -24,6 +24,10 @@
     {
       "id": 6,
       "tip": "Brown-out without UVLO leaves silicon half-born. Reset clean, or debug ghosts forever."
+    },
+    {
+      "id": 7,
+      "tip": "Decoupling an inch away is decoration. Cap next to the pin, or the rail rings."
     }
   ]
 }
