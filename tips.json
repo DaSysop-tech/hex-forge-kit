@@ -1,4 +1,5 @@
 {
+  "updated": "2026-09-15",
   "tips": [
     {
       "id": 1,
@@ -37,6 +38,12 @@
       "tip": "A power limit is windup in metal: the controller asks for more u, the actuator is already SAT. Laptop GPUs and LDOs both punish ignoring the ceiling.",
       "date": "2026-09-14",
       "source": "hex-cole-eve-practice"
+    },
+    {
+      "id": 10,
+      "tip": "SSA: each name is written once. At a join, φ is the honesty tax — skip it and the CFG lies about which value arrived.",
+      "date": "2026-09-15",
+      "source": "hex-tinylang-practice"
     }
   ]
 }
