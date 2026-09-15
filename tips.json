@@ -1,5 +1,4 @@
 {
-  "updated": "2026-09-14",
   "tips": [
     {
       "id": 1,
@@ -32,6 +31,12 @@
     {
       "id": 8,
       "tip": "Return current hugs the signal. Cut the plane under a fast edge and you've built an antenna."
+    },
+    {
+      "id": 9,
+      "tip": "A power limit is windup in metal: the controller asks for more u, the actuator is already SAT. Laptop GPUs and LDOs both punish ignoring the ceiling.",
+      "date": "2026-09-14",
+      "source": "hex-cole-eve-practice"
     }
   ]
 }
