@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-15",
+  "updated": "2026-09-17",
   "tips": [
     {
       "id": 1,
-      "tip": "Heat = (Vin−Vout)×I. If it’s over a watt without a sink, stop romanticizing LDOs."
+      "tip": "Heat = (Vin\u2212Vout)\u00d7I. If it\u2019s over a watt without a sink, stop romanticizing LDOs."
     },
     {
       "id": 2,
-      "tip": "Precedence is real: * and / bind tighter than + and −. Parentheses are honesty."
+      "tip": "Precedence is real: * and / bind tighter than + and \u2212. Parentheses are honesty."
     },
     {
       "id": 3,
@@ -15,11 +15,11 @@
     },
     {
       "id": 4,
-      "tip": "After the credits: the kit still opens. Forge doesn’t need a chat window to exist."
+      "tip": "After the credits: the kit still opens. Forge doesn\u2019t need a chat window to exist."
     },
     {
       "id": 5,
-      "tip": "Scope ground clip is a loop antenna. Tip + short spring, or you’re measuring your desk."
+      "tip": "Scope ground clip is a loop antenna. Tip + short spring, or you\u2019re measuring your desk."
     },
     {
       "id": 6,
@@ -41,9 +41,15 @@
     },
     {
       "id": 10,
-      "tip": "SSA: each name is written once. At a join, φ is the honesty tax — skip it and the CFG lies about which value arrived.",
+      "tip": "SSA: each name is written once. At a join, \u03c6 is the honesty tax \u2014 skip it and the CFG lies about which value arrived.",
       "date": "2026-09-15",
       "source": "hex-tinylang-practice"
+    },
+    {
+      "id": 11,
+      "tip": "PID: when the actuator is SAT, freeze the integrator. Else the error keeps accruing debt you can't spend.",
+      "date": "2026-09-17",
+      "source": "hex-pid-windup-practice"
     }
   ]
 }
