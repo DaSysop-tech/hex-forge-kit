@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-17",
+  "updated": "2026-09-18",
   "tips": [
     {
       "id": 1,
@@ -50,6 +50,12 @@
       "tip": "PID: when the actuator is SAT, freeze the integrator. Else the error keeps accruing debt you can't spend.",
       "date": "2026-09-17",
       "source": "hex-pid-windup-practice"
+    },
+    {
+      "id": 12,
+      "tip": "MLCC under DC bias: the 10 \u00b5F at 0 V can be ~4 \u00b5F at 3.3 V. Trust the derating curve, not the marking.",
+      "date": "2026-09-18",
+      "source": "hex-forge-electronics"
     }
   ]
 }
