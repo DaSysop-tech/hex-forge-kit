@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-18",
+  "updated": "2026-09-21",
   "tips": [
     {
       "id": 1,
-      "tip": "Heat = (Vin\u2212Vout)\u00d7I. If it\u2019s over a watt without a sink, stop romanticizing LDOs."
+      "tip": "Heat = (Vin−Vout)×I. If it’s over a watt without a sink, stop romanticizing LDOs."
     },
     {
       "id": 2,
-      "tip": "Precedence is real: * and / bind tighter than + and \u2212. Parentheses are honesty."
+      "tip": "Precedence is real: * and / bind tighter than + and −. Parentheses are honesty."
     },
     {
       "id": 3,
@@ -15,11 +15,11 @@
     },
     {
       "id": 4,
-      "tip": "After the credits: the kit still opens. Forge doesn\u2019t need a chat window to exist."
+      "tip": "After the credits: the kit still opens. Forge doesn’t need a chat window to exist."
     },
     {
       "id": 5,
-      "tip": "Scope ground clip is a loop antenna. Tip + short spring, or you\u2019re measuring your desk."
+      "tip": "Scope ground clip is a loop antenna. Tip + short spring, or you’re measuring your desk."
     },
     {
       "id": 6,
@@ -41,7 +41,7 @@
     },
     {
       "id": 10,
-      "tip": "SSA: each name is written once. At a join, \u03c6 is the honesty tax \u2014 skip it and the CFG lies about which value arrived.",
+      "tip": "SSA: each name is written once. At a join, φ is the honesty tax — skip it and the CFG lies about which value arrived.",
       "date": "2026-09-15",
       "source": "hex-tinylang-practice"
     },
@@ -53,9 +53,15 @@
     },
     {
       "id": 12,
-      "tip": "MLCC under DC bias: the 10 \u00b5F at 0 V can be ~4 \u00b5F at 3.3 V. Trust the derating curve, not the marking.",
+      "tip": "MLCC under DC bias: the 10 µF at 0 V can be ~4 µF at 3.3 V. Trust the derating curve, not the marking.",
       "date": "2026-09-18",
       "source": "hex-forge-electronics"
+    },
+    {
+      "id": 13,
+      "tip": "Window before you FFT. A rectangular cut of a non-period signal bleeds across bins — chase the window, not a ghost tone.",
+      "date": "2026-09-21",
+      "source": "hex-dsp-practice"
     }
   ]
 }
