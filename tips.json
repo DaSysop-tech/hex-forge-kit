@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-21",
+  "updated": "2026-09-22",
   "tips": [
     {
       "id": 1,
@@ -62,6 +62,12 @@
       "tip": "Window before you FFT. A rectangular cut of a non-period signal bleeds across bins — chase the window, not a ghost tone.",
       "date": "2026-09-21",
       "source": "hex-dsp-practice"
+    },
+    {
+      "id": 14,
+      "tip": "At 2.4 GHz, λ/4 ≈ 3 cm. An unterminated stub that long is a resonator — shorten it or terminate; free copper becomes an antenna.",
+      "date": "2026-09-22",
+      "source": "hex-rf-front-end"
     }
   ]
 }
