@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-22",
+  "updated": "2026-09-23",
   "tips": [
     {
       "id": 1,
@@ -68,6 +68,12 @@
       "tip": "At 2.4 GHz, λ/4 ≈ 3 cm. An unterminated stub that long is a resonator — shorten it or terminate; free copper becomes an antenna.",
       "date": "2026-09-22",
       "source": "hex-rf-front-end"
+    },
+    {
+      "id": 15,
+      "tip": "Atomic replace is rename-last. Crash between write and rename and you've got neither file — fsync the new one first.",
+      "date": "2026-09-23",
+      "source": "hex-storage-scar"
     }
   ]
 }
