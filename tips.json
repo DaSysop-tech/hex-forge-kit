@@ -1,13 +1,13 @@
 {
-  "updated": "2026-09-23",
+  "updated": "2026-09-24",
   "tips": [
     {
       "id": 1,
-      "tip": "Heat = (Vin−Vout)×I. If it’s over a watt without a sink, stop romanticizing LDOs."
+      "tip": "Heat = (Vin\u2212Vout)\u00d7I. If it\u2019s over a watt without a sink, stop romanticizing LDOs."
     },
     {
       "id": 2,
-      "tip": "Precedence is real: * and / bind tighter than + and −. Parentheses are honesty."
+      "tip": "Precedence is real: * and / bind tighter than + and \u2212. Parentheses are honesty."
     },
     {
       "id": 3,
@@ -15,11 +15,11 @@
     },
     {
       "id": 4,
-      "tip": "After the credits: the kit still opens. Forge doesn’t need a chat window to exist."
+      "tip": "After the credits: the kit still opens. Forge doesn\u2019t need a chat window to exist."
     },
     {
       "id": 5,
-      "tip": "Scope ground clip is a loop antenna. Tip + short spring, or you’re measuring your desk."
+      "tip": "Scope ground clip is a loop antenna. Tip + short spring, or you\u2019re measuring your desk."
     },
     {
       "id": 6,
@@ -41,7 +41,7 @@
     },
     {
       "id": 10,
-      "tip": "SSA: each name is written once. At a join, φ is the honesty tax — skip it and the CFG lies about which value arrived.",
+      "tip": "SSA: each name is written once. At a join, \u03c6 is the honesty tax \u2014 skip it and the CFG lies about which value arrived.",
       "date": "2026-09-15",
       "source": "hex-tinylang-practice"
     },
@@ -53,27 +53,33 @@
     },
     {
       "id": 12,
-      "tip": "MLCC under DC bias: the 10 µF at 0 V can be ~4 µF at 3.3 V. Trust the derating curve, not the marking.",
+      "tip": "MLCC under DC bias: the 10 \u00b5F at 0 V can be ~4 \u00b5F at 3.3 V. Trust the derating curve, not the marking.",
       "date": "2026-09-18",
       "source": "hex-forge-electronics"
     },
     {
       "id": 13,
-      "tip": "Window before you FFT. A rectangular cut of a non-period signal bleeds across bins — chase the window, not a ghost tone.",
+      "tip": "Window before you FFT. A rectangular cut of a non-period signal bleeds across bins \u2014 chase the window, not a ghost tone.",
       "date": "2026-09-21",
       "source": "hex-dsp-practice"
     },
     {
       "id": 14,
-      "tip": "At 2.4 GHz, λ/4 ≈ 3 cm. An unterminated stub that long is a resonator — shorten it or terminate; free copper becomes an antenna.",
+      "tip": "At 2.4 GHz, \u03bb/4 \u2248 3 cm. An unterminated stub that long is a resonator \u2014 shorten it or terminate; free copper becomes an antenna.",
       "date": "2026-09-22",
       "source": "hex-rf-front-end"
     },
     {
       "id": 15,
-      "tip": "Atomic replace is rename-last. Crash between write and rename and you've got neither file — fsync the new one first.",
+      "tip": "Atomic replace is rename-last. Crash between write and rename and you've got neither file \u2014 fsync the new one first.",
       "date": "2026-09-23",
       "source": "hex-storage-scar"
+    },
+    {
+      "id": 16,
+      "tip": "Aperture jitter turns amplitude into phase noise. On a fast edge, picoseconds of uncertainty steal bits you thought you bought.",
+      "date": "2026-09-24",
+      "source": "hex-sampling-practice"
     }
   ]
 }
