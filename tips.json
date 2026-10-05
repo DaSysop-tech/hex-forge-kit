@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-02",
+  "updated": "2026-10-05",
   "tips": [
     {
       "id": 1,
@@ -116,6 +116,12 @@
       "tip": "Unused CMOS inputs float. Bias them, or the gate chatters in the linear region and eats milliamps you never budgeted.",
       "date": "2026-10-02",
       "source": "hex-forge-electronics"
+    },
+    {
+      "id": 23,
+      "tip": "Signed overflow is UB in C. The optimizer assumes it never happens, so your `if (x + 1 < x)` guard gets deleted. Check before you add, or use unsigned.",
+      "date": "2026-10-05",
+      "source": "hex-compiler-practice"
     }
   ]
 }
