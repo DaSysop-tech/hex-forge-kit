@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07",
+  "updated": "2026-10-08",
   "tips": [
     {
       "id": 1,
@@ -134,6 +134,12 @@
       "tip": "A SAR ADC's sample cap gulps charge every conversion. Feed it from a high-impedance divider and it won't settle in the acquisition window — buffer it, or park a big cap at the pin.",
       "date": "2026-10-07",
       "source": "hex-sampling-practice"
+    },
+    {
+      "id": 26,
+      "tip": "Casting a float* to uint32_t* to peek at the bits breaks strict aliasing. The optimizer assumes the two never overlap and reorders your loads. Use memcpy; it compiles to the same single move.",
+      "date": "2026-10-08",
+      "source": "hex-compiler-practice"
     }
   ]
 }
