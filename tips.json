@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-12",
+  "updated": "2026-10-13",
   "tips": [
     {
       "id": 1,
@@ -152,6 +152,12 @@
       "tip": "volatile guarantees the access happens. It does not mean atomic, cross-thread ordered, or barrier-safe — a plain volatile int still races without a lock or atomic.",
       "date": "2026-10-12",
       "source": "hex-compiler-practice"
+    },
+    {
+      "id": 29,
+      "tip": "Quantizing a signal near 1 LSB makes harmonic garbage, not noise. Add ~1 LSB of dither before the ADC and the error turns random — then averaging resolves below an LSB instead of locking onto a staircase.",
+      "date": "2026-10-13",
+      "source": "hex-sampling-practice"
     }
   ]
 }
