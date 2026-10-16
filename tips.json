@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "tips": [
     {
       "id": 1,
@@ -170,6 +170,12 @@
       "tip": "Bulk caps look like a short at t=0. Soft-start (or inrush limit) isn't niceness — without it the upstream FET or breaker trips before the rail ever settles.",
       "date": "2026-10-15",
       "source": "hex-forge-power"
+    },
+    {
+      "id": 32,
+      "tip": "A ferrite bead is a resistor at RF, not a magic EMI eraser. Put it on a hungry digital rail and the DC drop under load is a brown-out you designed in.",
+      "date": "2026-10-16",
+      "source": "hex-forge-electronics"
     }
   ]
 }
