@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16",
+  "updated": "2026-10-19",
   "tips": [
     {
       "id": 1,
@@ -176,6 +176,12 @@
       "tip": "A ferrite bead is a resistor at RF, not a magic EMI eraser. Put it on a hungry digital rail and the DC drop under load is a brown-out you designed in.",
       "date": "2026-10-16",
       "source": "hex-forge-electronics"
+    },
+    {
+      "id": 33,
+      "tip": "Argument evaluation order in C is unspecified. f(next(), next()) may run right-to-left on your compiler and left-to-right on the next — pull side effects into named locals first.",
+      "date": "2026-10-19",
+      "source": "hex-compiler-practice"
     }
   ]
 }
