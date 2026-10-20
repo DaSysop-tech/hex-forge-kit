@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19",
+  "updated": "2026-10-20",
   "tips": [
     {
       "id": 1,
@@ -182,6 +182,12 @@
       "tip": "Argument evaluation order in C is unspecified. f(next(), next()) may run right-to-left on your compiler and left-to-right on the next — pull side effects into named locals first.",
       "date": "2026-10-19",
       "source": "hex-compiler-practice"
+    },
+    {
+      "id": 34,
+      "tip": "I2C pull-ups are a timing part, not a default. Rise time is roughly 0.85·R·C_bus — 10 kΩ on a long, loaded bus misses the 400 kHz spec and you get flaky NACKs that only show up on the scope.",
+      "date": "2026-10-20",
+      "source": "hex-forge-electronics"
     }
   ]
 }
