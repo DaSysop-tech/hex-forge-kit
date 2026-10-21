@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "tips": [
     {
       "id": 1,
@@ -188,6 +188,12 @@
       "tip": "I2C pull-ups are a timing part, not a default. Rise time is roughly 0.85·R·C_bus — 10 kΩ on a long, loaded bus misses the 400 kHz spec and you get flaky NACKs that only show up on the scope.",
       "date": "2026-10-20",
       "source": "hex-forge-electronics"
+    },
+    {
+      "id": 35,
+      "tip": "A DAC's zero-order hold is a sinc filter you didn't ask for: about −3.9 dB at Nyquist. Pre-emphasize the top band or oversample, or your highs come out dull and you blame the amp.",
+      "date": "2026-10-21",
+      "source": "hex-sampling-practice"
     }
   ]
 }
