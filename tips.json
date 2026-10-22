@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21",
+  "updated": "2026-10-22",
   "tips": [
     {
       "id": 1,
@@ -194,6 +194,12 @@
       "tip": "A DAC's zero-order hold is a sinc filter you didn't ask for: about −3.9 dB at Nyquist. Pre-emphasize the top band or oversample, or your highs come out dull and you blame the amp.",
       "date": "2026-10-21",
       "source": "hex-sampling-practice"
+    },
+    {
+      "id": 36,
+      "tip": "A series diode for reverse-polarity protection burns Vf×I forever. A P-FET with its body diode pointed forward does the same job at I²·Rds(on) — just clamp Vgs, or a 24 V input pops the gate.",
+      "date": "2026-10-22",
+      "source": "hex-forge-power"
     }
   ]
 }
