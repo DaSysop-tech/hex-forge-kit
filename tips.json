@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22",
+  "updated": "2026-10-23",
   "tips": [
     {
       "id": 1,
@@ -200,6 +200,12 @@
       "tip": "A series diode for reverse-polarity protection burns Vf×I forever. A P-FET with its body diode pointed forward does the same job at I²·Rds(on) — just clamp Vgs, or a 24 V input pops the gate.",
       "date": "2026-10-22",
       "source": "hex-forge-power"
+    },
+    {
+      "id": 37,
+      "tip": "Shifting by the full width or more is UB in C: 1u << 32 isn't 0. x86 masks the count to 5 bits and hands you 1, ARM gives 0, and the optimizer may assume it never happens. Guard the count, or split the shift.",
+      "date": "2026-10-23",
+      "source": "hex-compiler-practice"
     }
   ]
 }
