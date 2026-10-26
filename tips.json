@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23",
+  "updated": "2026-10-26",
   "tips": [
     {
       "id": 1,
@@ -206,6 +206,12 @@
       "tip": "Shifting by the full width or more is UB in C: 1u << 32 isn't 0. x86 masks the count to 5 bits and hands you 1, ARM gives 0, and the optimizer may assume it never happens. Guard the count, or split the shift.",
       "date": "2026-10-23",
       "source": "hex-compiler-practice"
+    },
+    {
+      "id": 38,
+      "tip": "A SAR ADC's sample cap grabs charge from your input every conversion. Feed it from a 100 kΩ divider and it never settles in the acquisition window, so readings sag with sample rate. Buffer it, or park a cap at the pin about 1000× the sample cap.",
+      "date": "2026-10-26",
+      "source": "hex-sampling-practice"
     }
   ]
 }
