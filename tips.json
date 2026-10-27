@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-26",
+  "updated": "2026-10-27",
   "tips": [
     {
       "id": 1,
@@ -212,6 +212,12 @@
       "tip": "A SAR ADC's sample cap grabs charge from your input every conversion. Feed it from a 100 kΩ divider and it never settles in the acquisition window, so readings sag with sample rate. Buffer it, or park a cap at the pin about 1000× the sample cap.",
       "date": "2026-10-26",
       "source": "hex-sampling-practice"
+    },
+    {
+      "id": 39,
+      "tip": "Crystal load caps aren't 22 pF by habit. The crystal sees C1·C2/(C1+C2) plus stray, so for a 12 pF CL with ~5 pF stray you want about 14 pF each side. Guess wrong and the clock runs tens of ppm off, and your UART drifts first.",
+      "date": "2026-10-27",
+      "source": "hex-forge-electronics"
     }
   ]
 }
