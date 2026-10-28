@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "tips": [
     {
       "id": 1,
@@ -218,6 +218,12 @@
       "tip": "Crystal load caps aren't 22 pF by habit. The crystal sees C1·C2/(C1+C2) plus stray, so for a 12 pF CL with ~5 pF stray you want about 14 pF each side. Guess wrong and the clock runs tens of ppm off, and your UART drifts first.",
       "date": "2026-10-27",
       "source": "hex-forge-electronics"
+    },
+    {
+      "id": 40,
+      "tip": "-ffast-math lets the compiler reassociate floating point. Your Kahan compensation term algebraically equals zero, so it gets deleted, and isnan() checks can fold to false. Keep fast-math off the files that care about rounding.",
+      "date": "2026-10-28",
+      "source": "hex-compiler-practice"
     }
   ]
 }
