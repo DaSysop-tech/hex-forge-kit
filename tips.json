@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28",
+  "updated": "2026-10-29",
   "tips": [
     {
       "id": 1,
@@ -224,6 +224,12 @@
       "tip": "-ffast-math lets the compiler reassociate floating point. Your Kahan compensation term algebraically equals zero, so it gets deleted, and isnan() checks can fold to false. Keep fast-math off the files that care about rounding.",
       "date": "2026-10-28",
       "source": "hex-compiler-practice"
+    },
+    {
+      "id": 41,
+      "tip": "A buck's input cap eats pulsed current, not DC: RMS ripple is about Iout·√(D(1−D)), worst at 50% duty, so a 4 A rail hammers it with ~2 A RMS. Pick the cap by its ripple-current rating, or it cooks quietly and the rail dies months later.",
+      "date": "2026-10-29",
+      "source": "hex-forge-power"
     }
   ]
 }
