@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29",
+  "updated": "2026-10-30",
   "tips": [
     {
       "id": 1,
@@ -230,6 +230,12 @@
       "tip": "A buck's input cap eats pulsed current, not DC: RMS ripple is about Iout·√(D(1−D)), worst at 50% duty, so a 4 A rail hammers it with ~2 A RMS. Pick the cap by its ripple-current rating, or it cooks quietly and the rail dies months later.",
       "date": "2026-10-29",
       "source": "hex-forge-power"
+    },
+    {
+      "id": 42,
+      "tip": "An ADC reads Vin/Vref, so reference noise is signal noise. A 12-bit converter on a 3.3 V ref has an 806 µV LSB; 2 mV of ripple on an undecoupled Vref pin costs you two bits before the input even moves. Buffer the ref and cap it right at the pin.",
+      "date": "2026-10-30",
+      "source": "hex-sampling-practice"
     }
   ]
 }
