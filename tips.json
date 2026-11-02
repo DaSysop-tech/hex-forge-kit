@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30",
+  "updated": "2026-11-02",
   "tips": [
     {
       "id": 1,
@@ -236,6 +236,12 @@
       "tip": "An ADC reads Vin/Vref, so reference noise is signal noise. A 12-bit converter on a 3.3 V ref has an 806 µV LSB; 2 mV of ripple on an undecoupled Vref pin costs you two bits before the input even moves. Buffer the ref and cap it right at the pin.",
       "date": "2026-10-30",
       "source": "hex-sampling-practice"
+    },
+    {
+      "id": 43,
+      "tip": "Drive a MOSFET gate by charge, not voltage: a 40 nC Qg from a GPIO that sources ~20 mA takes about 2 µs to switch, and the FET sits half-on in its linear region the whole time, cooking at PWM rates. Use a gate driver, or budget t ≈ Qg/I before you pick the part.",
+      "date": "2026-11-02",
+      "source": "hex-forge-power"
     }
   ]
 }
