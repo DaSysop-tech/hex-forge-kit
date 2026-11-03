@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "tips": [
     {
       "id": 1,
@@ -241,6 +241,12 @@
       "id": 43,
       "tip": "Drive a MOSFET gate by charge, not voltage: a 40 nC Qg from a GPIO that sources ~20 mA takes about 2 µs to switch, and the FET sits half-on in its linear region the whole time, cooking at PWM rates. Use a gate driver, or budget t ≈ Qg/I before you pick the part.",
       "date": "2026-11-02",
+      "source": "hex-forge-power"
+    },
+    {
+      "id": 44,
+      "tip": "A package's θJA is a datasheet test board, not your board. SOT-23 at ~200 °C/W turns 0.5 W into a 100 °C rise; on a thin trace with no copper pour it's worse. Multiply watts by θJA, add ambient, and if you're near Tj(max) pour copper or change the package.",
+      "date": "2026-11-03",
       "source": "hex-forge-power"
     }
   ]
