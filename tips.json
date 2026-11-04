@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03",
+  "updated": "2026-11-04",
   "tips": [
     {
       "id": 1,
@@ -248,6 +248,12 @@
       "tip": "A package's θJA is a datasheet test board, not your board. SOT-23 at ~200 °C/W turns 0.5 W into a 100 °C rise; on a thin trace with no copper pour it's worse. Multiply watts by θJA, add ambient, and if you're near Tj(max) pour copper or change the package.",
       "date": "2026-11-03",
       "source": "hex-forge-power"
+    },
+    {
+      "id": 45,
+      "date": "2026-11-04",
+      "source": "hex-compiler-practice",
+      "tip": "C promotes uint8_t to int before any math. So with uint8_t x = 0x0F, ~x is 0xFFFFFFF0, not 0xF0, and (~x == 0xF0) is false. Same trap on x << 8 into a signed int. Cast the result back to uint8_t or mask with & 0xFF before you compare."
     }
   ]
 }
