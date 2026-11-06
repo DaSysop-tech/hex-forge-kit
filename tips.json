@@ -1,13 +1,13 @@
 {
-  "updated": "2026-11-05",
+  "updated": "2026-11-06",
   "tips": [
     {
       "id": 1,
-      "tip": "Heat = (Vin\u2212Vout)\u00d7I. If it\u2019s over a watt without a sink, stop romanticizing LDOs."
+      "tip": "Heat = (Vin−Vout)×I. If it’s over a watt without a sink, stop romanticizing LDOs."
     },
     {
       "id": 2,
-      "tip": "Precedence is real: * and / bind tighter than + and \u2212. Parentheses are honesty."
+      "tip": "Precedence is real: * and / bind tighter than + and −. Parentheses are honesty."
     },
     {
       "id": 3,
@@ -15,11 +15,11 @@
     },
     {
       "id": 4,
-      "tip": "After the credits: the kit still opens. Forge doesn\u2019t need a chat window to exist."
+      "tip": "After the credits: the kit still opens. Forge doesn’t need a chat window to exist."
     },
     {
       "id": 5,
-      "tip": "Scope ground clip is a loop antenna. Tip + short spring, or you\u2019re measuring your desk."
+      "tip": "Scope ground clip is a loop antenna. Tip + short spring, or you’re measuring your desk."
     },
     {
       "id": 6,
@@ -41,7 +41,7 @@
     },
     {
       "id": 10,
-      "tip": "SSA: each name is written once. At a join, \u03c6 is the honesty tax \u2014 skip it and the CFG lies about which value arrived.",
+      "tip": "SSA: each name is written once. At a join, φ is the honesty tax — skip it and the CFG lies about which value arrived.",
       "date": "2026-09-15",
       "source": "hex-tinylang-practice"
     },
@@ -53,25 +53,25 @@
     },
     {
       "id": 12,
-      "tip": "MLCC under DC bias: the 10 \u00b5F at 0 V can be ~4 \u00b5F at 3.3 V. Trust the derating curve, not the marking.",
+      "tip": "MLCC under DC bias: the 10 µF at 0 V can be ~4 µF at 3.3 V. Trust the derating curve, not the marking.",
       "date": "2026-09-18",
       "source": "hex-forge-electronics"
     },
     {
       "id": 13,
-      "tip": "Window before you FFT. A rectangular cut of a non-period signal bleeds across bins \u2014 chase the window, not a ghost tone.",
+      "tip": "Window before you FFT. A rectangular cut of a non-period signal bleeds across bins — chase the window, not a ghost tone.",
       "date": "2026-09-21",
       "source": "hex-dsp-practice"
     },
     {
       "id": 14,
-      "tip": "At 2.4 GHz, \u03bb/4 \u2248 3 cm. An unterminated stub that long is a resonator \u2014 shorten it or terminate; free copper becomes an antenna.",
+      "tip": "At 2.4 GHz, λ/4 ≈ 3 cm. An unterminated stub that long is a resonator — shorten it or terminate; free copper becomes an antenna.",
       "date": "2026-09-22",
       "source": "hex-rf-front-end"
     },
     {
       "id": 15,
-      "tip": "Atomic replace is rename-last. Crash between write and rename and you've got neither file \u2014 fsync the new one first.",
+      "tip": "Atomic replace is rename-last. Crash between write and rename and you've got neither file — fsync the new one first.",
       "date": "2026-09-23",
       "source": "hex-storage-scar"
     },
@@ -131,7 +131,7 @@
     },
     {
       "id": 25,
-      "tip": "A SAR ADC's sample cap gulps charge every conversion. Feed it from a high-impedance divider and it won't settle in the acquisition window \u2014 buffer it, or park a big cap at the pin.",
+      "tip": "A SAR ADC's sample cap gulps charge every conversion. Feed it from a high-impedance divider and it won't settle in the acquisition window — buffer it, or park a big cap at the pin.",
       "date": "2026-10-07",
       "source": "hex-sampling-practice"
     },
@@ -143,31 +143,31 @@
     },
     {
       "id": 27,
-      "tip": "Half-bridge bootstrap only refreshes when the switch node goes low. Hold the high side on forever and the gate undervolts \u2014 the FET cooks in the linear region. PWM it, or use a charge pump.",
+      "tip": "Half-bridge bootstrap only refreshes when the switch node goes low. Hold the high side on forever and the gate undervolts — the FET cooks in the linear region. PWM it, or use a charge pump.",
       "date": "2026-10-09",
       "source": "hex-forge-power"
     },
     {
       "id": 28,
-      "tip": "volatile guarantees the access happens. It does not mean atomic, cross-thread ordered, or barrier-safe \u2014 a plain volatile int still races without a lock or atomic.",
+      "tip": "volatile guarantees the access happens. It does not mean atomic, cross-thread ordered, or barrier-safe — a plain volatile int still races without a lock or atomic.",
       "date": "2026-10-12",
       "source": "hex-compiler-practice"
     },
     {
       "id": 29,
-      "tip": "Quantizing a signal near 1 LSB makes harmonic garbage, not noise. Add ~1 LSB of dither before the ADC and the error turns random \u2014 then averaging resolves below an LSB instead of locking onto a staircase.",
+      "tip": "Quantizing a signal near 1 LSB makes harmonic garbage, not noise. Add ~1 LSB of dither before the ADC and the error turns random — then averaging resolves below an LSB instead of locking onto a staircase.",
       "date": "2026-10-13",
       "source": "hex-sampling-practice"
     },
     {
       "id": 30,
-      "tip": "Internal ESD diodes dump into VCC/GND. Power the rail off and that path becomes a free latch-up pump \u2014 clamp at the connector, or keep the supply able to sink the hit.",
+      "tip": "Internal ESD diodes dump into VCC/GND. Power the rail off and that path becomes a free latch-up pump — clamp at the connector, or keep the supply able to sink the hit.",
       "date": "2026-10-14",
       "source": "hex-forge-electronics"
     },
     {
       "id": 31,
-      "tip": "Bulk caps look like a short at t=0. Soft-start (or inrush limit) isn't niceness \u2014 without it the upstream FET or breaker trips before the rail ever settles.",
+      "tip": "Bulk caps look like a short at t=0. Soft-start (or inrush limit) isn't niceness — without it the upstream FET or breaker trips before the rail ever settles.",
       "date": "2026-10-15",
       "source": "hex-forge-power"
     },
@@ -179,25 +179,25 @@
     },
     {
       "id": 33,
-      "tip": "Argument evaluation order in C is unspecified. f(next(), next()) may run right-to-left on your compiler and left-to-right on the next \u2014 pull side effects into named locals first.",
+      "tip": "Argument evaluation order in C is unspecified. f(next(), next()) may run right-to-left on your compiler and left-to-right on the next — pull side effects into named locals first.",
       "date": "2026-10-19",
       "source": "hex-compiler-practice"
     },
     {
       "id": 34,
-      "tip": "I2C pull-ups are a timing part, not a default. Rise time is roughly 0.85\u00b7R\u00b7C_bus \u2014 10 k\u03a9 on a long, loaded bus misses the 400 kHz spec and you get flaky NACKs that only show up on the scope.",
+      "tip": "I2C pull-ups are a timing part, not a default. Rise time is roughly 0.85·R·C_bus — 10 kΩ on a long, loaded bus misses the 400 kHz spec and you get flaky NACKs that only show up on the scope.",
       "date": "2026-10-20",
       "source": "hex-forge-electronics"
     },
     {
       "id": 35,
-      "tip": "A DAC's zero-order hold is a sinc filter you didn't ask for: about \u22123.9 dB at Nyquist. Pre-emphasize the top band or oversample, or your highs come out dull and you blame the amp.",
+      "tip": "A DAC's zero-order hold is a sinc filter you didn't ask for: about −3.9 dB at Nyquist. Pre-emphasize the top band or oversample, or your highs come out dull and you blame the amp.",
       "date": "2026-10-21",
       "source": "hex-sampling-practice"
     },
     {
       "id": 36,
-      "tip": "A series diode for reverse-polarity protection burns Vf\u00d7I forever. A P-FET with its body diode pointed forward does the same job at I\u00b2\u00b7Rds(on) \u2014 just clamp Vgs, or a 24 V input pops the gate.",
+      "tip": "A series diode for reverse-polarity protection burns Vf×I forever. A P-FET with its body diode pointed forward does the same job at I²·Rds(on) — just clamp Vgs, or a 24 V input pops the gate.",
       "date": "2026-10-22",
       "source": "hex-forge-power"
     },
@@ -209,13 +209,13 @@
     },
     {
       "id": 38,
-      "tip": "A SAR ADC's sample cap grabs charge from your input every conversion. Feed it from a 100 k\u03a9 divider and it never settles in the acquisition window, so readings sag with sample rate. Buffer it, or park a cap at the pin about 1000\u00d7 the sample cap.",
+      "tip": "A SAR ADC's sample cap grabs charge from your input every conversion. Feed it from a 100 kΩ divider and it never settles in the acquisition window, so readings sag with sample rate. Buffer it, or park a cap at the pin about 1000× the sample cap.",
       "date": "2026-10-26",
       "source": "hex-sampling-practice"
     },
     {
       "id": 39,
-      "tip": "Crystal load caps aren't 22 pF by habit. The crystal sees C1\u00b7C2/(C1+C2) plus stray, so for a 12 pF CL with ~5 pF stray you want about 14 pF each side. Guess wrong and the clock runs tens of ppm off, and your UART drifts first.",
+      "tip": "Crystal load caps aren't 22 pF by habit. The crystal sees C1·C2/(C1+C2) plus stray, so for a 12 pF CL with ~5 pF stray you want about 14 pF each side. Guess wrong and the clock runs tens of ppm off, and your UART drifts first.",
       "date": "2026-10-27",
       "source": "hex-forge-electronics"
     },
@@ -227,25 +227,25 @@
     },
     {
       "id": 41,
-      "tip": "A buck's input cap eats pulsed current, not DC: RMS ripple is about Iout\u00b7\u221a(D(1\u2212D)), worst at 50% duty, so a 4 A rail hammers it with ~2 A RMS. Pick the cap by its ripple-current rating, or it cooks quietly and the rail dies months later.",
+      "tip": "A buck's input cap eats pulsed current, not DC: RMS ripple is about Iout·√(D(1−D)), worst at 50% duty, so a 4 A rail hammers it with ~2 A RMS. Pick the cap by its ripple-current rating, or it cooks quietly and the rail dies months later.",
       "date": "2026-10-29",
       "source": "hex-forge-power"
     },
     {
       "id": 42,
-      "tip": "An ADC reads Vin/Vref, so reference noise is signal noise. A 12-bit converter on a 3.3 V ref has an 806 \u00b5V LSB; 2 mV of ripple on an undecoupled Vref pin costs you two bits before the input even moves. Buffer the ref and cap it right at the pin.",
+      "tip": "An ADC reads Vin/Vref, so reference noise is signal noise. A 12-bit converter on a 3.3 V ref has an 806 µV LSB; 2 mV of ripple on an undecoupled Vref pin costs you two bits before the input even moves. Buffer the ref and cap it right at the pin.",
       "date": "2026-10-30",
       "source": "hex-sampling-practice"
     },
     {
       "id": 43,
-      "tip": "Drive a MOSFET gate by charge, not voltage: a 40 nC Qg from a GPIO that sources ~20 mA takes about 2 \u00b5s to switch, and the FET sits half-on in its linear region the whole time, cooking at PWM rates. Use a gate driver, or budget t \u2248 Qg/I before you pick the part.",
+      "tip": "Drive a MOSFET gate by charge, not voltage: a 40 nC Qg from a GPIO that sources ~20 mA takes about 2 µs to switch, and the FET sits half-on in its linear region the whole time, cooking at PWM rates. Use a gate driver, or budget t ≈ Qg/I before you pick the part.",
       "date": "2026-11-02",
       "source": "hex-forge-power"
     },
     {
       "id": 44,
-      "tip": "A package's \u03b8JA is a datasheet test board, not your board. SOT-23 at ~200 \u00b0C/W turns 0.5 W into a 100 \u00b0C rise; on a thin trace with no copper pour it's worse. Multiply watts by \u03b8JA, add ambient, and if you're near Tj(max) pour copper or change the package.",
+      "tip": "A package's θJA is a datasheet test board, not your board. SOT-23 at ~200 °C/W turns 0.5 W into a 100 °C rise; on a thin trace with no copper pour it's worse. Multiply watts by θJA, add ambient, and if you're near Tj(max) pour copper or change the package.",
       "date": "2026-11-03",
       "source": "hex-forge-power"
     },
@@ -259,7 +259,13 @@
       "id": 46,
       "date": "2026-11-05",
       "source": "hex-forge-electronics",
-      "tip": "A via is roughly 0.5\u20131 nH. At 1 A/ns of di/dt that's a volt of ground bounce on the return \u2014 stitch the switcher return with copper pour and multiple vias, not one lonely hole under the FET."
+      "tip": "A via is roughly 0.5–1 nH. At 1 A/ns of di/dt that's a volt of ground bounce on the return — stitch the switcher return with copper pour and multiple vias, not one lonely hole under the FET."
+    },
+    {
+      "id": 47,
+      "date": "2026-11-06",
+      "source": "hex-sampling-practice",
+      "tip": "ENOB is what you actually bought. A 16-bit ADC with 74 dB SNR is roughly 12 bits of real resolution — ENOB = (SNR − 1.76)/6.02. Trust the noise floor, not the pin count on the silk."
     }
   ]
 }
